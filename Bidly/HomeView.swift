@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var viewModel = ListingViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView {
+                LazyVStack (spacing: 16) {
+                    ForEach(viewModel.listings) { listing in
+                        ListingCardView(listing: listing)
+                            
+                    }
+                }
+                .padding()
+            }
+            .navigationTitle("Live Auctions")
+            .background(Color(.systemGroupedBackground))
+            .onAppear {
+                viewModel.fetchListings()
+            }
         }
-        .padding()
     }
 }
 

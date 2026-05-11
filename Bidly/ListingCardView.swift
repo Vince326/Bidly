@@ -45,6 +45,6 @@ struct ListingCardView: View {
 }
     
     #Preview {
-        ListingCardView(listing: Listing(itemName: "Vintage Baseball Card", sellerName: "Jim Johnson", currentBid: 33.00, imageName: "rectangle.portrait"))
+        ListingCardView(listing: Listing(id: "preview123", itemName: "Vintage Baseball Card", sellerName: "Jim Johnson", currentBid: 33.00, imageName: "rectangle.portrait"))
     }
 

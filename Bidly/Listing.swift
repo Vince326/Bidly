@@ -8,7 +8,7 @@
 import Foundation
 
 struct Listing: Identifiable {
-    let id: UUID = UUID()
+    let id: String
     let itemName: String
     let sellerName: String
     let currentBid: Double
